@@ -3,3 +3,7 @@ data/*
 
 # Do not ignore the data folder itself
 !data/
+
+# Allow .gitkeep in the data folder
+!data/.gitkeep
+
