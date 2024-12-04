@@ -40,19 +40,6 @@ def process_conductor_data(conductor_path):
 
 
 def merge_psps_conductor_vri(conductor_path, vri_path, weather_station_psps):
-    """
-    Merges PSPS weather station data, VRI polygons, and conductor span data into a unified GeoDataFrame 
-    based on spatial relationships.
-
-    Args:
-        conductor_path (str): Path to the conductor span data file.
-        vri_path (str): Path to the VRI snapshot data file.
-        weather_station_psps (pd.DataFrame): DataFrame with PSPS weather station data, including 'shape' 
-            (geometries in WKT format) and 'shape_srid' (spatial reference system).
-
-    Returns:
-        gpd.GeoDataFrame: GeoDataFrame containing merged data from VRI polygons and conductor spans.
-    """
     dev_wings_agg_span = process_conductor_data(conductor_path)
     #dev_wings_agg_span = dev_wings_agg_span.drop(columns=['Unnamed: 0'])
     src_vri_snapshot = process_vri_data(vri_path)

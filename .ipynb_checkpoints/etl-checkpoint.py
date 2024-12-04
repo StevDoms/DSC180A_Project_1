@@ -51,41 +51,19 @@ def get_windspeed_data(windspeed_path):
     return windspeed_data
 
 def merge_weather_data(gis_path, station_summary_path, windspeed_path):
-    """
-    Merge GIS, station summary, and windspeed datasets into a single DataFrame.
-
-    Args:
-        gis_path (str): Path to the GIS dataset.
-        station_summary_path (str): Path to the station summary dataset.
-        windspeed_path (str): Path to the windspeed snapshot dataset.
-
-    Returns:
-        pd.DataFrame: Merged dataset with wind speed threshold calculations.
-    """
+    """Merges the GIS, station summary, and windspeed datasets."""
     # Load datasets
     gis_data = get_gis_data(gis_path)
     station_summary = get_station_summary_data(station_summary_path)
     windspeed_snapshot = get_windspeed_data(windspeed_path)
-    windspeed_snapshot = windspeed_snapshot[(windspeed_snapshot['wind_speed'] < max(windspeed_snapshot['wind_speed']))]
 
     # Merging logic
     merged_data = gis_data.merge(station_summary, left_on='weatherstationcode', right_on='station').drop(columns=['station'])
     final_merged_data = merged_data.merge(windspeed_snapshot, left_on='weatherstationcode', right_on='station').drop(columns=['station'])
-    final_merged_data['exceed_threshold'] = final_merged_data.apply(lambda row: int(row['wind_speed'] > row['alert']), axis=1)
     return final_merged_data
 
 def save_data(df, output_path, file_name):
-    """
-    Save a DataFrame to a CSV file.
-
-    Args:
-        df (pd.DataFrame): DataFrame to save.
-        output_path (str): Directory where the file will be saved.
-        file_name (str): Name of the CSV file.
-
-    Returns:
-        str: Path to the saved file.
-    """
+    """Saves the processed DataFrame to a CSV file."""
     os.makedirs(output_path, exist_ok=True)
     file_path = os.path.join(output_path, file_name)
     df.to_csv(file_path, index=False)

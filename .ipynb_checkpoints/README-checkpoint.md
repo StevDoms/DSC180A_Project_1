@@ -19,6 +19,7 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
         src_wings_meteorology_windspeed_snapshot_2023_08_02.csv
         src_vri_snapshot_2024_03_20.csv
         dev_wings_agg_span_2024_01_01.csv
+    data/processed/  # This folder will store processed outputs
     ```
 
 ---
@@ -27,7 +28,7 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
 
 1. Open a terminal and navigate to the project directory:
    ```bash
-   cd /path/to/DSC180A_Q1_project
+   cd /path/to/DSC180A_project
    ```
 
 2. Run the following commands to set up the Conda environment:
@@ -35,13 +36,8 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
    conda env create -f environment.yml
    conda activate geo_env
    ```
-   Note if you are running in DSMLP you might get an instruction CondaError: Run 'conda init' before 'conda activate', if so run before conda activate geo_env:
 
-   ```bash
-   source ~/.bashrc
-   ```
-
-4. After the Conda environment is activated, you are prepared to run the project code.
+3. After the Conda environment is activated, you are prepared to run the project code.
 
 ---
 
@@ -68,27 +64,62 @@ If you need to run specific components of the pipeline, use the following comman
   python run.py psps
   ```
 
-- **Filter PSPS Stations**: Filters high-risk PSPS stations based on a threshold.
+- **Top PSPS Stations**: Filters high-risk PSPS stations based on a threshold.
   ```bash
-  python run.py filter
+  python run.py top-psps
   ```
 
 - **VRI and Conductor Merge**: Merges conductor and vegetation risk index (VRI) data.
   ```bash
-  python run.py merge-vri
+  python run.py vri-conductor
   ```
 
-- **Analyze spans**: Builds a directed graph of spans for upstream/downstream analysis to perform span analysis and and calculate probabilities of each span.
+- **Network Graph**: Builds a directed graph of spans for upstream/downstream analysis.
   ```bash
-  python run.py analyze spans
+  python run.py network
   ```
 
-- **Feeder analysis**: Perform feeder analysis by exploring the annual customers affected for a given parent feeder id and predicting number of customers affected in 10 years.
+- **Associate Weather Stations with Spans**: Links weather stations to spans.
   ```bash
-  python run.py feeder_analysis
+  python run.py associateStationSpan
+  ```
+
+- **Span Probabilities**: Calculates probabilities for spans being affected.
+  ```bash
+  python run.py getSpanProbs
+  ```
+
+- **Highest Probability Spans**: Identifies spans with the highest shutoff probabilities.
+  ```bash
+  python run.py highestProbSpans
+  ```
+
+- **Feeder Impact**: Calculates customer impact statistics for specific feeders.
+  ```bash
+  python run.py feederInfo
   ```
 
 ---
 
 ### Step 4: Outputs
-We showed our expected outputs in proj1_notebook_results as print statements, feel free to use the notebooks to verify your results.
+
+Processed data and results are saved in the `data/processed/` folder. Key outputs include:
+- `merged_weather_data.csv`: Processed weather data.
+- `weather_station_psps.csv`: PSPS probabilities for weather stations.
+- `top_psps_stations.csv`: High-risk PSPS stations.
+- `merged_vri_conductor_psps.csv`: Merged VRI and conductor data.
+- `network_graph.json`: Directed graph of spans.
+- `associated_weather_station_to_span.csv`: Weather stations linked to spans.
+- `span_probabilities.csv`: Probabilities for spans.
+- `spans_with_highest_probabilities.csv`: Spans with the highest probabilities.
+- `feeder_impact_statistics.json`: Customer impact statistics for a specific feeder.
+
+--- 
+
+### Step 5: Verify Results
+
+1. Use the `.csv` outputs for further analysis and visualization.
+2. Open the `network_graph.json` file to review the span network.
+3. Review `feeder_impact_statistics.json` for insights into customer impact for specific feeders.
+
+--- 

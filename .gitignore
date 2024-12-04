@@ -1,1 +1,18 @@
-data/
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore environment-related files (optional)
+*.env
+*.DS_Store
+
+# Ignore virtual environments (if applicable)
+env/
+venv/
+
+# Ignore everything inside the data folder but include the folder itself
+data/*
+!data/

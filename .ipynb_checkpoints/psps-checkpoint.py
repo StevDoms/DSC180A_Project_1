@@ -27,6 +27,9 @@ def calculate_psps_probability(merged_data, gis_weather_station, condition):
     # Reset the index to include weather station code as a column
     combined_count = combined_count.reset_index()
 
+    # Step 4: Debugging - Check contents of combined_count
+    print("Combined Count:\n", combined_count.head())
+
     # Step 5: Merge with GIS weather station data
     weather_station_psps = gis_weather_station.merge(
         combined_count, on='weatherstationcode', how='left'
