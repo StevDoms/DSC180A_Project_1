@@ -64,7 +64,7 @@ If you need to run specific components of the pipeline, use the following comman
 
 - **Data Processing**: Prepares and merges weather data.
   ```bash
-  python run.py data
+  python run.py merge
   ```
 
 - **PSPS Probabilities**: Calculates PSPS probabilities for weather stations.
