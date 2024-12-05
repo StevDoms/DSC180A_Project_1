@@ -1,7 +1,6 @@
 from etl import load_data, merge_weather_data, save_data
 import geopandas as gpd
 from shapely import wkt
-import pandas as pd
 
 def process_vri_data(vri_path):
     """
@@ -33,17 +32,10 @@ def process_conductor_data(conductor_path):
     """
     dev_wings_agg_span = load_data(conductor_path)
     dev_wings_agg_span = dev_wings_agg_span.drop(columns=['Unnamed: 0'], errors='ignore')
+    dev_wings_agg_span['geometry'] = dev_wings_agg_span['shape'].apply(wkt.loads)
+    dev_wings_agg_span_gpd = gpd.GeoDataFrame(dev_wings_agg_span, geometry='geometry', crs=f"EPSG:{dev_wings_agg_span['shape_srid'][0]}")
     
-    # Drop rows where 'shape' is NaN or not a string
-    dev_wings_agg_span = dev_wings_agg_span[pd.notna(dev_wings_agg_span['shape'])]
-    
-    # Apply wkt.loads safely
-    dev_wings_agg_span['geometry'] = dev_wings_agg_span['shape'].apply(
-        lambda x: wkt.loads(x) if isinstance(x, str) else None
-    )
-    return gpd.GeoDataFrame(
-        dev_wings_agg_span, geometry='geometry', crs=f"EPSG:{dev_wings_agg_span['shape_srid'].iloc[0]}"
-    )
+    return dev_wings_agg_span_gpd
 
 
 

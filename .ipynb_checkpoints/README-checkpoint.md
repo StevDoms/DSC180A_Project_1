@@ -2,7 +2,7 @@ Here’s the updated content with instructions for running individual steps:
 
 ---
 
-# Enhancing Wildfire Resilience Through Strategic Public Safety Power Shutoffs
+# DSC180A Quarter 1 Capstone Project: Enhancing Wildfire Resilience Through Strategic Public Safety Power Shutoffs
 
 This Quarter 1 Capstone Project focuses on implementing Data Science methods to provide insights into Public Safety Power Shutoffs (PSPS) and developing actionable strategies for wildfire mitigation. Collaborating with SDG&E, we explore PSPS probabilities, assigning a probability value to every span on the SDG&E grid. Using exploratory data analysis (EDA), geospatial mapping, and directed graph analysis, we enable upstream and downstream tracing of spans.
 
