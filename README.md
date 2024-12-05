@@ -95,4 +95,4 @@ If you need to run specific components of the pipeline, use the following comman
 ---
 
 ### Step 4: Outputs
-We showed our expected outputs in proj1_notebook_results as print statements, feel free to use the notebooks to verify your results.
+Note our expected outputs are not shown in repository as it is classified according SDG&E unless you have permission. Feel free to use the terminal or proj1_notebooks_results to run the output of run.py.
