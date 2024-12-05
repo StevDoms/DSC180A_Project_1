@@ -4,8 +4,6 @@ Here’s the updated content with instructions for running individual steps:
 
 # Enhancing Wildfire Resilience Through Strategic Public Safety Power Shutoffs
 
-This Quarter 1 Capstone Project focuses on implementing Data Science methods to provide insights into Public Safety Power Shutoffs (PSPS) and developing actionable strategies for wildfire mitigation. Collaborating with SDG&E, we explore PSPS probabilities, assigning a probability value to every span on the SDG&E grid. Using exploratory data analysis (EDA), geospatial mapping, and directed graph analysis, we enable upstream and downstream tracing of spans.
-
 ## How to Run the Code
 
 ### Prerequisites
@@ -25,6 +23,7 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
         dev_wings_agg_span_2024_01_01.csv
     ```
 Adjust the parameters in data-params.json if you have a different file name. Our original dataset names in data-params.json is:
+
     ```
     {
       "gis_weatherstation": "./data/gis_weatherstation_shape_2024_10_04.csv",
