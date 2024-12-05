@@ -26,11 +26,13 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
     ```
 Adjust the parameters in data-params.json if you have a different file name. Our original dataset names in data-params.json is:
     ```
-    gis_weatherstation: "./data/gis_weatherstation_shape_2024_10_04.csv"
-    station_summary_snapshot: "./data/src_wings_meteorology_station_summary_snapshot_2023_08_02.csv"
-    windspeed_snapshot: "./data/src_wings_meteorology_windspeed_snapshot_2023_08_02.csv"
-    src_vri_snapshot: "./data/src_vri_snapshot_2024_03_20.csv"
-    dev_wings_agg_span: "./data/dev_wings_agg_span_2024_01_01.csv"
+    {
+      "gis_weatherstation": "./data/gis_weatherstation_shape_2024_10_04.csv",
+      "station_summary_snapshot": "./data/src_wings_meteorology_station_summary_snapshot_2023_08_02.csv",
+      "windspeed_snapshot": "./data/src_wings_meteorology_windspeed_snapshot_2023_08_02.csv",
+      "src_vri_snapshot": "./data/src_vri_snapshot_2024_03_20.csv",
+      "dev_wings_agg_span": "./data/dev_wings_agg_span_2024_01_01.csv"
+    }
     ```
 
 ---
