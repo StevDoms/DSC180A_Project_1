@@ -79,12 +79,12 @@ If you need to run specific components of the pipeline, use the following comman
 
 - **VRI and Conductor Merge**: Merges conductor and vegetation risk index (VRI) data.
   ```bash
-  python run.py merge_vri
+  python run.py merge-vri
   ```
 
 - **Analyze spans**: Builds a directed graph of spans for upstream/downstream analysis to perform span analysis and and calculate probabilities of each span.
   ```bash
-  python run.py analyze_spans
+  python run.py analyze spans
   ```
 
 - **Feeder analysis**: Perform feeder analysis by exploring the annual customers affected for a given parent feeder id and predicting number of customers affected in 10 years.
@@ -95,4 +95,4 @@ If you need to run specific components of the pipeline, use the following comman
 ---
 
 ### Step 4: Outputs
-Note our expected outputs are not shown in repository as it is classified according SDG&E unless you have permission. Feel free to use the terminal or proj1_notebooks_results to run the output of run.py, you should expect print statments of the results and it may take a while to complete the whole process.
+Note our expected outputs are not shown in repository as it is classified according SDG&E unless you have permission. Feel free to use the terminal or proj1_notebooks_results to run the output of run.py.
