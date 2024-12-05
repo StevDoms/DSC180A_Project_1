@@ -7,3 +7,9 @@ data/*
 # Allow .gitkeep in the data folder
 !data/.gitkeep
 
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python bytecode cache
+__pycache__/
+
