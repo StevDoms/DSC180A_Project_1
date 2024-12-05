@@ -9,9 +9,12 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
 ## How to Run the Code
 
 ### Prerequisites
-
-1. Ensure you have [Anaconda](https://www.anaconda.com/products/distribution) installed.
-2. Ensure that the required data files are present in the `data/` folder, structured as follows:
+1. Git clone the code repository by executing git clone in your selected folder:
+   ```bash
+   git clone https://github.com/StevDoms/DSC180A_Project_1.git
+   ```
+3. Ensure you have [Anaconda](https://www.anaconda.com/products/distribution) installed.
+4. Ensure that the required data files are present in the `data/` folder, structured as follows:
     ```
     data/
         gis_weatherstation_shape_2024_10_04.csv
@@ -38,6 +41,7 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
    Note if you are running in DSMLP you might get an instruction CondaError: Run 'conda init' before 'conda activate', if so run before conda activate geo_env:
 
    ```bash
+   conda init
    source ~/.bashrc
    ```
 
