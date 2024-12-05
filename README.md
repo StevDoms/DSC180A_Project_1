@@ -103,4 +103,4 @@ If you need to run specific components of the pipeline, use the following comman
 ---
 
 ### Step 4: Outputs
-Note our expected outputs are not shown in repository as it is classified according SDG&E unless you have permission. Feel free to use the terminal or proj1_notebooks_results to run the output of run.py, you should expect print statments of the results and it may take a while to complete the whole process.
+Note: Our project's expected outputs are not displayed in the repository as there is a confidentiality agreement with SDG&E. Feel free to run the commands in the terminal or run the proj1_notebook.ipynb to view the output. The notebook will provide a better experience and complete picture of the project.
