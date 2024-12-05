@@ -22,7 +22,8 @@ Here’s the updated content with instructions for running individual steps:
         src_vri_snapshot_2024_03_20.csv
         dev_wings_agg_span_2024_01_01.csv
     ```
-Adjust the parameters in data-params.json if you have a different file name. Our original dataset names in data-params.json is:
+
+Keep in mind, the dataset takes a while to load and it will cause an error if you run the code while the dataset is loading. Also adjust the parameters in data-params.json if you have a different file name. Our original dataset names in data-params.json is:
 
     {
       "gis_weatherstation": "./data/gis_weatherstation_shape_2024_10_04.csv",
@@ -31,6 +32,7 @@ Adjust the parameters in data-params.json if you have a different file name. Our
       "src_vri_snapshot": "./data/src_vri_snapshot_2024_03_20.csv",
       "dev_wings_agg_span": "./data/dev_wings_agg_span_2024_01_01.csv"
     }    
+
 
 ---
 
