@@ -27,7 +27,7 @@ This Quarter 1 Capstone Project focuses on implementing Data Science methods to 
 
 1. Open a terminal and navigate to the project directory:
    ```bash
-   cd /path/to/DSC180A_Q1_project
+   cd /path/to/DSC180A_Project_1
    ```
 
 2. Run the following commands to set up the Conda environment:
